@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import ErrorBoundary from "../../components/errorBoundary/ErrorBoundary";
+import OtherWorks from "../../components/otherWorks/OtherWorks";
+import "./home.css";
 
 export default function Home() {
   useEffect(() => {
@@ -15,9 +18,10 @@ export default function Home() {
     fetchData();
   }, []);
   return (
-    <>
-      <div>home</div>
-      <div>home2</div>
-    </>
+    <div className="layout">
+      <ErrorBoundary>
+        <OtherWorks />
+      </ErrorBoundary>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import "./Navigation.css";
+import "./navigation.css";
 import fav from "../../assets/bookmark.svg";
 import home from "../../assets/home.svg";
 

@@ -5,6 +5,8 @@ import Home from "../../pages/home/Home";
 import Art from "../../pages/art/Art";
 import Favorites from "../../pages/favorites/Favorites";
 import Header from "../header/Header";
+import Footer from "../footer/Footer";
+import "./app.css";
 
 export default function App() {
   return (
@@ -15,6 +17,7 @@ export default function App() {
         <Route path="/art" element={<Art />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

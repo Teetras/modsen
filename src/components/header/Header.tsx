@@ -1,6 +1,6 @@
 import React from "react";
-import "./Header.css";
-import logo from "../../assets/museum-logo2.svg";
+import "./header.css";
+import logo from "../../assets/museum-logo1.svg";
 import Navigation from "../navigation/Nafigation";
 
 export default function Header() {
