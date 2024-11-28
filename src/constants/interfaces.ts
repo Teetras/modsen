@@ -13,9 +13,8 @@ export interface Artwork {
   _score: number;
   credit_line: string;
   place_of_origin: string;
-  
 }
-export interface Pagination{
+export interface Pagination {
   total: number;
   limit: number;
   offset: number;
@@ -23,10 +22,9 @@ export interface Pagination{
   current_page: number;
   next_url: string | null;
 }
-export interface ResponseApi{
+export interface ResponseApi {
   data: Artwork[];
-  pagination:Pagination;
-
+  pagination: Pagination;
 }
 export interface ErrorBoundaryProps {
   children: ReactNode;
@@ -37,4 +35,7 @@ export interface ErrorBoundaryState {
 export interface TitleProps {
   text?: string;
   title?: string;
+}
+export interface ArtCardInfoProps {
+  art: Artwork;
 }

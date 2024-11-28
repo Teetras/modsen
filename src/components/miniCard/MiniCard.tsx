@@ -1,9 +1,9 @@
 import React from "react";
 import { Artwork } from "../../constants/interfaces";
-import { truncateText } from "../../utils/textUtils";
 import "./miniCard.css";
 import ButtonFavotrite from "../buttonFavorite/ButtonFavorite";
 import defaultImageUrl from "../../assets/Group 95.svg";
+import ArtCardInfo from "../ArtCardInfo/ArtCardInfo";
 
 const MiniCard: React.FC<{ art: Artwork }> = ({ art }) => {
   const imgUrl = art.image_id
@@ -18,14 +18,7 @@ const MiniCard: React.FC<{ art: Artwork }> = ({ art }) => {
           <img className="image" src={imgUrl} alt={art.title || "Artwork"} />
         </a>
 
-        <div className="info">
-          <h4>{truncateText(art.title, 20, "Title missing")}</h4>
-          <p className="author">
-            {truncateText(art.artist_title, 18, "Artist name missing")}
-          </p>
-          <p>{art.is_on_view ? "Public" : "Private"}</p>
-        </div>
-
+        <ArtCardInfo art={art} />
         <ButtonFavotrite art={art} />
       </div>
     </div>

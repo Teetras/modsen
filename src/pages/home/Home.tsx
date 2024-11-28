@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import ErrorBoundary from "../../components/errorBoundary/ErrorBoundary";
 import OtherWorks from "../../components/otherWorks/OtherWorks";
 import "./home.css";
+import Gallery from "../../components/gallery/Gallery";
 
 export default function Home() {
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function Home() {
   return (
     <div className="layout">
       <ErrorBoundary>
+        <Gallery />
         <OtherWorks />
       </ErrorBoundary>
     </div>
