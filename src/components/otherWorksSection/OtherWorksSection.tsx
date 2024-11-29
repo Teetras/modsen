@@ -6,12 +6,12 @@ import MiniCard from "../miniCard/MiniCard";
 import LoadingIndicator from "../loadingIndicator/LoadingIndicator";
 import "./otherWorks.css";
 
-const OtherWorks = () => {
+const OtherWorksSection = () => {
   const [data, setData] = useState<Artwork[]>([]);
   const [loader, setLoader] = useState(false);
 
   useEffect(() => {
-    fetchArtworks(Math.floor(Math.random() * 100), 9)
+    fetchArtworks(getRandomNumber(1, 100), 9)
       .then((data: { data: Artwork[] }) => {
         setData(data.data);
         setLoader(true);
@@ -20,6 +20,13 @@ const OtherWorks = () => {
         console.log(e);
       });
   }, []);
+
+  const getRandomNumber = (min: number, max: number): number => {
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    return min + (array[0] % (max - min + 1));
+  };
+
   return (
     <div className="other-works">
       <Title text="Here some more" title="Other works for you" />
@@ -34,4 +41,4 @@ const OtherWorks = () => {
   );
 };
 
-export default OtherWorks;
+export default OtherWorksSection;

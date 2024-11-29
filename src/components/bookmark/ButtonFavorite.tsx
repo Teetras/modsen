@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Artwork } from "../../constants/interfaces";
 import { isArtFavorite, toggleFavorite } from "../../utils/favoriteUtils";
 import bookmark from "../../assets/bookmark.svg";
-import "./buttonFavorite.css";
+import "./bookmark.css";
 
-const ButtonFavotrite: React.FC<{ art: Artwork }> = ({ art }) => {
+const Bookmark: React.FC<{ art: Artwork }> = ({ art }) => {
   const [isFavorite, setFavorite] = useState(false);
 
   useEffect(() => {
@@ -26,4 +26,4 @@ const ButtonFavotrite: React.FC<{ art: Artwork }> = ({ art }) => {
   );
 };
 
-export default ButtonFavotrite;
+export default Bookmark;

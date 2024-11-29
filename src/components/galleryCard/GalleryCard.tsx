@@ -1,7 +1,7 @@
 import { Artwork } from "../../constants/interfaces";
 import React from "react";
 import defaultImageUrl from "../../assets/Group 2.svg";
-import ButtonFavotrite from "../buttonFavorite/ButtonFavorite";
+import Bookmark from "../bookmark/ButtonFavorite";
 import ArtCardInfo from "../ArtCardInfo/ArtCardInfo";
 import "./galleryCard.css";
 
@@ -25,7 +25,7 @@ const GalleryArtCard: React.FC<{ art: Artwork }> = ({ art }) => {
         <div className="info-overlay">
           <ArtCardInfo art={art} />
 
-          <ButtonFavotrite art={art} />
+          <Bookmark art={art} />
         </div>
       </div>
     </div>

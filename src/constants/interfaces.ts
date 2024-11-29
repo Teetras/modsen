@@ -22,6 +22,11 @@ export interface Pagination {
   current_page: number;
   next_url: string | null;
 }
+export interface PaginationProps {
+  pagination: Pagination;
+  setPage: (page: number) => void;
+}
+
 export interface ResponseApi {
   data: Artwork[];
   pagination: Pagination;

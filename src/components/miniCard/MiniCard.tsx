@@ -1,7 +1,7 @@
 import React from "react";
 import { Artwork } from "../../constants/interfaces";
 import "./miniCard.css";
-import ButtonFavotrite from "../buttonFavorite/ButtonFavorite";
+import Bookmark from "../bookmark/ButtonFavorite";
 import defaultImageUrl from "../../assets/Group 95.svg";
 import ArtCardInfo from "../ArtCardInfo/ArtCardInfo";
 
@@ -19,7 +19,7 @@ const MiniCard: React.FC<{ art: Artwork }> = ({ art }) => {
         </a>
 
         <ArtCardInfo art={art} />
-        <ButtonFavotrite art={art} />
+        <Bookmark art={art} />
       </div>
     </div>
   );
