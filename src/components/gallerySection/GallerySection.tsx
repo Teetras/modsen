@@ -58,7 +58,7 @@ const GallerySection: React.FC = () => {
 
       <div className="gallery-container">
         <div className="cards-container">
-          {data.length > 0 ? (
+          {data.length ? (
             data.map((art) => <GalleryArtCard key={art.id} art={art} />)
           ) : (
             <p>No artworks found.</p>

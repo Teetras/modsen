@@ -17,6 +17,8 @@
     background-color: #ffffff;
     align-items: center;
     padding: 25px 13px;
+    position:relative;
+
   }
   
   
@@ -62,3 +64,4 @@
     margin-left: auto;
     cursor: pointer;
   }
+ 

@@ -52,7 +52,7 @@
   border: none;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (max-width: 1280px) {
   .button-pagination {
     justify-content: center;
   }

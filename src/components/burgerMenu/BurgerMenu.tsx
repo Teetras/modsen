@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
-// import styles from "./BurgerMenu.css";
 import useOutsideClick from "../../utils/customHook";
+import "./burgerMenu.css";
 
 const BurgerMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  useOutsideClick(menuRef, () => setIsOpen(false)); // Закрытие меню при клике вне
+  useOutsideClick(menuRef, () => setIsOpen(false));
 
   return (
     <div className="burgerContainer">
@@ -20,11 +20,15 @@ const BurgerMenu: React.FC = () => {
       {isOpen && (
         <div className="menu" ref={menuRef}>
           <ul className="menuList">
-            <li>
-              <a href="/">Home</a>
+            <li className="menuItem">
+              <a className="menuLink" href="/">
+                Home
+              </a>
             </li>
-            <li>
-              <a href="/#/fav">Favorite</a>
+            <li className="menuItem">
+              <a className="menuLink" href="/favorites">
+                Favorite
+              </a>
             </li>
           </ul>
         </div>

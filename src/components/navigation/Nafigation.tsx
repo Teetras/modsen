@@ -19,7 +19,7 @@ export default function Navigation() {
         )}
         <li className="element">
           <img src={fav} alt="Your favorites" />
-          <a href="/#/fav">Your favorites</a>
+          <a href="/favorites">Your favorites</a>
         </li>
       </ul>
     </nav>

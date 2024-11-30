@@ -92,3 +92,21 @@
   outline: none;
   border: none;
 }
+@media (max-width: 768px) {
+  .title-container, .input-wrapper {
+    width: 90%; 
+  }
+
+  .main-title {
+    font-size: 48px; 
+    line-height: 60px;
+  }
+}
+@media (max-width: 480px) {
+
+  .main-title {
+    font-size: 32px; 
+    line-height: 40px;
+  }
+
+}

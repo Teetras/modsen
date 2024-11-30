@@ -9,7 +9,8 @@ const MiniCard: React.FC<{ art: Artwork }> = ({ art }) => {
   const imgUrl = art.image_id
     ? `https://www.artic.edu/iiif/2/${art.image_id}/full/400,/0/default.jpg`
     : defaultImageUrl;
-  const url = `/art?id=${art.id}`;
+  const url = `/art/${art.id}`;
+  console.log(art);
 
   return (
     <div className="mini-card-wrapper">
@@ -19,7 +20,9 @@ const MiniCard: React.FC<{ art: Artwork }> = ({ art }) => {
         </a>
 
         <ArtCardInfo art={art} />
-        <Bookmark art={art} />
+        <div className="position-mini">
+          <Bookmark art={art} />
+        </div>
       </div>
     </div>
   );
