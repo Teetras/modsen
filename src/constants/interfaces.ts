@@ -44,3 +44,14 @@ export interface TitleProps {
 export interface ArtCardInfoProps {
   art: Artwork;
 }
+export interface SearchInputProps {
+  query: string;
+  setQuery: (query: string) => void;
+  handleSearch: () => void;
+}
+export interface SearchResultsProps {
+  errorMsg: string;
+  sortField: string;
+  setSortField: (field: string) => void;
+  filteredItems: Artwork[];
+}

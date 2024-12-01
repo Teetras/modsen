@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { getFavorites } from "../../utils/favoriteUtils";
-import { Artwork } from "../../constants/interfaces";
+
 import LoadingIndicator from "../../components/loadingIndicator/LoadingIndicator";
 import MiniCard from "../../components/miniCard/MiniCard";
 import bookmark from "../../assets/Vector.svg";
 import "./favorites.css";
 import Title from "../../components/title/Title";
+import { useFavorites } from "../../context/FavoritesContext";
 
 export default function Favorites() {
-  const [favorites, setFavorites] = useState<Artwork[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const { favorites, getFavorites } = useFavorites(); // Получаем избранные из контекста
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchFavorites = () => {
-      const favoritesFromStorage = getFavorites();
-      setFavorites(favoritesFromStorage);
-      setLoading(false); // Установите загрузку в false после получения данных
+      getFavorites();
+      setIsLoading(false);
     };
 
     fetchFavorites();
-  }, []);
+  });
 
-  if (loading) {
+  if (isLoading) {
     return <LoadingIndicator />;
   }
 

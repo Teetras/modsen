@@ -1,5 +1,5 @@
 import React from "react";
 const LoadingIndicator = () => {
-  return <div>Загрузка данных...</div>;
+  return <div>Loading data...</div>;
 };
 export default LoadingIndicator;

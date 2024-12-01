@@ -11,7 +11,7 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
-    ignores: [".node_modules/*", "webpack.config"],
+    ignores: [".node_modules/*"],
   },
 ];
 

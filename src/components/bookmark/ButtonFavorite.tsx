@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Artwork } from "../../constants/interfaces";
-import { isArtFavorite, toggleFavorite } from "../../utils/favoriteUtils";
+import { useFavorites } from "../../context/FavoritesContext";
 import bookmark from "../../assets/bookmark.svg";
 import "./bookmark.css";
 
 const Bookmark: React.FC<{ art: Artwork }> = ({ art }) => {
-  const [isFavorite, setFavorite] = useState(false);
-
-  useEffect(() => {
-    if (isArtFavorite(art)) setFavorite(true);
-  }, []);
+  const { addFavorite, removeFavorite, isArtFavorite } = useFavorites();
+  const isFavorite = isArtFavorite(art);
 
   const handleFavoriteToggle = () => {
-    toggleFavorite(art);
-    setFavorite(!isFavorite);
+    if (isFavorite) {
+      removeFavorite(art.id);
+    } else {
+      addFavorite(art);
+    }
   };
 
   return (
     <div
-      onClick={() => handleFavoriteToggle()}
-      className={isArtFavorite(art) ? "isFav bookmark" : "unFav bookmark"}
+      onClick={handleFavoriteToggle}
+      className={isFavorite ? "isFav bookmark" : "unFav bookmark"}
     >
       <img src={bookmark} alt="button bookmark" />
     </div>

@@ -32,20 +32,17 @@ const SearchSection: React.FC = () => {
       setErrorMsg("Error fetching data. Please try again." + error);
     }
   };
+
   const updateFilteredItems = (data: any[], sortKey: string) => {
     const sortedData = sortArray(data, sortKey);
     setFilteredItems(sortedData);
   };
+
   const handleSearch = async () => {
     try {
-      const res = await searchSchema.validate({ search: query });
-      console.log("res  " + res);
+      await searchSchema.validate({ search: query });
       setErrorMsg("");
-      try {
-        await fetchItems();
-      } catch (err) {
-        console.log(err);
-      }
+      await fetchItems();
     } catch (error) {
       if (error instanceof yup.ValidationError) {
         setFilteredItems([]);
@@ -55,6 +52,7 @@ const SearchSection: React.FC = () => {
       }
     }
   };
+
   useEffect(() => {
     if (items.length) updateFilteredItems(items, sortField);
   }, [sortField, items]);
@@ -67,9 +65,7 @@ const SearchSection: React.FC = () => {
     <div className="search-section">
       <div className="title-container">
         <h1 className="main-title">
-          Let&apos;s Find Some
-          <span> Art </span>
-          Here!
+          Let&apos;s Find Some <span> Art </span> Here!
         </h1>
       </div>
 
@@ -81,7 +77,6 @@ const SearchSection: React.FC = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-
         <button onClick={handleSearch}>
           <img src={iconSearch} alt="Search icon" className="search-icon" />
         </button>
@@ -89,7 +84,7 @@ const SearchSection: React.FC = () => {
 
       {loading && (
         <div className="results">
-          {errorMsg && <p className="error">{errorMsg}</p>}{" "}
+          {errorMsg && <p className="error">{errorMsg}</p>}
           <div className="sorting">
             <label htmlFor="sort">Sort by:</label>
             <select
@@ -111,4 +106,5 @@ const SearchSection: React.FC = () => {
     </div>
   );
 };
+
 export default SearchSection;

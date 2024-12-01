@@ -6,7 +6,6 @@ import Bookmark from "../bookmark/ButtonFavorite";
 import "./artworkDetails.css";
 const ArtworkDetails: React.FC<{ art: Artwork }> = ({ art }) => {
   const [imgUrl, setImgUrl] = useState<any>(null);
-  console.log(art);
   useEffect(() => {
     if (art) {
       const fetchImage = async () => {
@@ -23,7 +22,6 @@ const ArtworkDetails: React.FC<{ art: Artwork }> = ({ art }) => {
       fetchImage();
     }
   }, []);
-  //   console.log(art);
   return (
     <div className="fullcard">
       <div className="img-content">
