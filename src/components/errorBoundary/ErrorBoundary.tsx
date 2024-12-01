@@ -20,7 +20,12 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   render() {
     if (this.state.hasError) {
-      return <>{this.props.fallbackUI}</>;
+      return (
+        <div>
+          <h1>Что-то пошло не так!</h1>
+          <p>Пожалуйста, попробуйте обновить страницу.</p>
+        </div>
+      );
     }
 
     return this.props.children;

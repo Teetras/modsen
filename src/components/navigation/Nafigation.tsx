@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import "./Navigation.css";
+import "./navigation.css";
 import fav from "../../assets/bookmark.svg";
 import home from "../../assets/home.svg";
 
@@ -19,7 +19,7 @@ export default function Navigation() {
         )}
         <li className="element">
           <img src={fav} alt="Your favorites" />
-          <a href="/#/fav">Your favorites</a>
+          <a href="/favorites">Your favorites</a>
         </li>
       </ul>
     </nav>
