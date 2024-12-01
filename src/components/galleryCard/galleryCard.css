@@ -1,6 +1,7 @@
 .gallery-card {
   width: 387px;
   height: 514px;
+  gap: 0px;
   border: 1px;
 }
 
@@ -8,7 +9,7 @@
 .image-gallery {
   width: 387px;
   height: 444px;
-
+  gap: 0px;
 }
 .info-overlay {
   display: flex;
