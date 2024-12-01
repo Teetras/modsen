@@ -9,7 +9,8 @@ module.exports = {
     filename: "[name].bundle.js",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".js", ".jsx"],
+
     alias: {
       "@": path.resolve(__dirname, "src"),
       "@components": path.resolve(__dirname, "src/components"),
@@ -26,6 +27,14 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         use: "babel-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.svg$/,
+        use: "svg-url-loader",
       },
     ],
   },
