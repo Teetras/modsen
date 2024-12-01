@@ -35,7 +35,6 @@
   width: 30px;
   height: 30px;
   border-radius: 4px;
-  opacity: 0px;
 
   cursor: pointer;
   transition: background-color 0.3s;
@@ -56,6 +55,21 @@
   .button-pagination {
     justify-content: center;
   }
+  .gallery-container {
+    width: 100%; 
+    overflow-x: auto; 
+    padding: 10px 0; 
+  }
 
+  .cards-container {
+    display: inline-flex; 
+    flex-wrap: nowrap; 
+    gap: 10px; 
+  }
+
+  .gallery-card {
+    min-width: 150px; 
+    flex: 0 0 auto; 
+  }
 }
 
