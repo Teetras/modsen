@@ -9,7 +9,7 @@ module.exports = {
     filename: "[name].bundle.js",
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".css"],
   },
   module: {
     rules: [
@@ -18,6 +18,7 @@ module.exports = {
         use: "babel-loader",
         exclude: /node_modules/,
       },
+
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
