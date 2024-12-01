@@ -8,7 +8,6 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import "./app.css";
 import { FavoritesProvider } from "../../context/FavoritesContext";
-// import { FavoritesProvider } from "@context/FavoritesContext";
 
 export default function App() {
   return (
