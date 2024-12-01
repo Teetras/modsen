@@ -1,8 +1,8 @@
 import React from "react";
-import "./header.css";
 import logo from "../../assets/museum-logo1.svg";
 import Navigation from "../navigation/Nafigation";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
+import "./header.css";
 
 export default function Header() {
   return (
